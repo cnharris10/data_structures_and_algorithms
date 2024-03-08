@@ -1,10 +1,10 @@
 from utils.trees.balanced_tree import BalancedTree
-from utils.trees.node import Node
+from utils.trees.tree_node import TreeNode
 from utils.trees.unbalanced_tree import UnbalancedTree
 
 
 class DFSPostorderRecursive(object):
-    def algorithm(self, node: Node):
+    def algorithm(self, node: TreeNode):
         if not node:
             return
 

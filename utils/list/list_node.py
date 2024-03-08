@@ -1,9 +1,8 @@
 from typing import Optional
 
 
-class Node(object):
-    left: Optional["Node"] = None
-    right: Optional["Node"] = None
+class ListNode(object):
+    next: Optional["ListNode"] = None
 
     def __init__(self, value: int):
         self.value = value

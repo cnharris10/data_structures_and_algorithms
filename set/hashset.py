@@ -75,10 +75,13 @@ class HashSet:
 
 if __name__ == "__main__":
     myset = HashSet.create([1, 1])
-    print(f"Initial: {myset}")
-    myset.remove(1)
+    print(f"Initial Set: {myset}")
     myset.add(3)
+    print(f"Add 3: {myset}")
     myset.add(4)
+    print(f"Add 4: {myset}")
+    print(f"Remove 1: {myset}")
+    myset.remove(1)
     myset.remove(1)
     myset.remove(2)
     print(f"Equality: {HashSet.create([1]) == HashSet.create([1])}")
