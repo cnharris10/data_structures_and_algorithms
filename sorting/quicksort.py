@@ -1,9 +1,11 @@
 class QuickSort(object):
+    name = "QuickSort"
 
     @classmethod
-    def run(cls, num_list):
+    def demo(cls):
+        num_list = [4, 7, 5, 2, 3, 8, 9, 1, 9, 6, 8]
         print(f"Original List: {num_list}")
-        instance = QuickSort()
+        instance = cls()
         instance.algorithm(num_list, 0, len(num_list) - 1)
         print(f"Sorted List: {num_list}")
 
@@ -37,4 +39,4 @@ class QuickSort(object):
 
 
 if __name__ == "__main__":
-    QuickSort.run([4, 7, 5, 2, 3, 8, 9, 1, 9, 6, 8])
+    QuickSort.demo()

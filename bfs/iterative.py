@@ -5,11 +5,14 @@ from utils.trees.unbalanced_tree import UnbalancedTree
 
 
 class BFS(object):
-    def run(self):
+    name = "Iterative Breadth-First Search"
+
+    @classmethod
+    def demo(cls):
         print("Running with a balanced tree")
-        self.algorithm(BalancedTree.build())
+        cls().algorithm(BalancedTree.build())
         print("Running with an unbalanced tree")
-        self.algorithm(UnbalancedTree.build())
+        cls().algorithm(UnbalancedTree.build())
 
     def __init__(self):
         self.queue = Queue(99999)

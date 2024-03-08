@@ -2,13 +2,15 @@ from typing import Optional
 
 
 class BinarySearch(object):
-    @staticmethod
-    def run():
+    name = "Binary Search"
+
+    @classmethod
+    def demo(cls):
         l = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-        BinarySearch.algorithm(l, 0, 8, 2)
-        BinarySearch.algorithm(l, 0, 8, 1)
-        BinarySearch.algorithm(l, 0, 8, 9)
-        BinarySearch.algorithm(l, 0, 8, 19)
+        cls.algorithm(l, 0, 8, 2)
+        cls.algorithm(l, 0, 8, 1)
+        cls.algorithm(l, 0, 8, 9)
+        cls.algorithm(l, 0, 8, 19)
 
     @staticmethod
     def algorithm(
@@ -37,4 +39,4 @@ class BinarySearch(object):
 
 
 if __name__ == "__main__":
-    BinarySearch.run()
+    BinarySearch.demo()

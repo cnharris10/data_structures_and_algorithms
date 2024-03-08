@@ -5,10 +5,27 @@ from search.bfs.utils.node import TreeNode
 from search.bfs.utils.matrix import Matrix
 from search.bfs.utils.position import Position
 from utils.queue import Queue
-from utils.trees.tree_node import TreeNode
 
 
 class BFSSearch(object):
+    name = "Breadth-First Search"
+
+    @classmethod
+    def demo(cls):
+        cls.run(
+            rows=20,
+            columns=20,
+            start=Position(4, 4),
+            target=Position(18, 19),
+            barriers={
+                (1, 1),
+                (2, 2),
+            },
+            strategy=False,
+            concurrent=True,
+            max_threads=20,
+        )
+
     @classmethod
     def run(
         cls,
@@ -131,16 +148,4 @@ class Evaluator(Thread):
 
 
 if __name__ == "__main__":
-    BFSSearch.run(
-        rows=20,
-        columns=20,
-        start=Position(4, 4),
-        target=Position(18, 19),
-        barriers={
-            (1, 1),
-            (2, 2),
-        },
-        strategy=False,
-        concurrent=True,
-        max_threads=20,
-    )
+    BFSSearch.demo()

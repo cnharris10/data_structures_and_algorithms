@@ -2,6 +2,25 @@ from typing import Optional
 
 
 class HashSet:
+    name = "HashSet"
+
+    @classmethod
+    def demo(cls):
+        myset = cls.create([1, 1])
+        print(f"Initial Set: {myset}")
+        myset.add(3)
+        print(f"Add 3: {myset}")
+        myset.add(4)
+        print(f"Add 4: {myset}")
+        print(f"Remove 1: {myset}")
+        myset.remove(1)
+        myset.remove(1)
+        myset.remove(2)
+        print(f"Equality: {HashSet.create([1]) == HashSet.create([1])}")
+        print(f"Union: {myset.union(HashSet.create([4, 5]))}")
+        print(f"Intersection: {myset.intersect(HashSet.create([4, 5]))}")
+        print(f"Difference: {myset.difference(HashSet.create([4, 5]))}")
+
     @classmethod
     def create(cls, values: list = None) -> "HashSet":
         if values is None:
@@ -74,17 +93,4 @@ class HashSet:
 
 
 if __name__ == "__main__":
-    myset = HashSet.create([1, 1])
-    print(f"Initial Set: {myset}")
-    myset.add(3)
-    print(f"Add 3: {myset}")
-    myset.add(4)
-    print(f"Add 4: {myset}")
-    print(f"Remove 1: {myset}")
-    myset.remove(1)
-    myset.remove(1)
-    myset.remove(2)
-    print(f"Equality: {HashSet.create([1]) == HashSet.create([1])}")
-    print(f"Union: {myset.union(HashSet.create([4, 5]))}")
-    print(f"Intersection: {myset.intersect(HashSet.create([4, 5]))}")
-    print(f"Difference: {myset.difference(HashSet.create([4, 5]))}")
+    HashSet.demo()

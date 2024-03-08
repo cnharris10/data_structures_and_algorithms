@@ -4,7 +4,18 @@ from typing import List, Any
 
 
 class Heap:
+    name = "Heap"
     values: List[int] = []
+
+    @classmethod
+    def demo(cls):
+        size = 20
+        heap = cls(max_heap=True)
+        for i in range(size):
+            heap.insert(randint(0, size * 10))
+
+        while heap.values:
+            heap.remove(heap.value_at(randint(0, heap.size() - 1)))
 
     def __init__(self, max_heap: bool = True, print_after_operation: bool = True):
         self.max_heap = max_heap
@@ -111,10 +122,4 @@ class Heap:
 
 
 if __name__ == "__main__":
-    size = 20
-    heap = Heap(max_heap=True)
-    for i in range(size):
-        heap.insert(randint(0, size * 10))
-
-    while heap.values:
-        heap.remove(heap.value_at(randint(0, heap.size() - 1)))
+    Heap.demo()

@@ -4,6 +4,16 @@ from utils.trees.unbalanced_tree import UnbalancedTree
 
 
 class DFSPreorderRecursive(object):
+    name = "Depth-First Search - Recursive Preorder"
+
+    @classmethod
+    def demo(cls):
+        instance = cls()
+        print("Running with a balanced tree")
+        instance.algorithm(BalancedTree.build())
+        print("Running with an unbalanced tree")
+        instance.algorithm(UnbalancedTree.build())
+
     def algorithm(self, node: TreeNode):
         if not node:
             return
@@ -17,8 +27,4 @@ class DFSPreorderRecursive(object):
 
 
 if __name__ == "__main__":
-    instance = DFSPreorderRecursive()
-    print("Running with a balanced tree")
-    instance.algorithm(BalancedTree.build())
-    print("Running with an unbalanced tree")
-    instance.algorithm(UnbalancedTree.build())
+    DFSPreorderRecursive.demo()

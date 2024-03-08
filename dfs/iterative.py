@@ -5,6 +5,16 @@ from utils.trees.unbalanced_tree import UnbalancedTree
 
 
 class DFS(object):
+    name = "Depth-First Search - Iterative Preorder"
+
+    @classmethod
+    def demo(cls):
+        instance = cls()
+        print("Running with a balanced tree")
+        instance.algorithm(BalancedTree.build())
+        print("Running with an unbalanced tree")
+        instance.algorithm(UnbalancedTree.build())
+
     def __init__(self, _max_size=100):
         self.stack = Stack(_max_size)
 
@@ -21,8 +31,4 @@ class DFS(object):
 
 
 if __name__ == "__main__":
-    instance = DFS()
-    print("Running with a balanced tree")
-    instance.algorithm(BalancedTree.build())
-    print("Running with an unbalanced tree")
-    instance.algorithm(UnbalancedTree.build())
+    DFS.demo()

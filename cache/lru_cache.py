@@ -4,6 +4,20 @@ from utils.list.list_node import ListNode
 
 
 class LRUCache:
+    name = "LRU Cache"
+
+    @classmethod
+    def demo(cls):
+        cache = cls.create(3)
+        cache.get(1, True)
+        cache.get(2, True)
+        cache.get(3, True)
+        cache.get(4, True)
+        cache.get(5, True)
+        cache.get(2, True)
+        cache.get(4, True)
+        cache.get(6, True)
+
     @classmethod
     def create(cls, max_count: int = 3) -> "LRUCache":
         return cls(max_count)
@@ -80,12 +94,4 @@ class LRUCache:
 
 
 if __name__ == "__main__":
-    cache = LRUCache.create(3)
-    cache.get(1, True)
-    cache.get(2, True)
-    cache.get(3, True)
-    cache.get(4, True)
-    cache.get(5, True)
-    cache.get(2, True)
-    cache.get(4, True)
-    cache.get(6, True)
+    LRUCache.run()
