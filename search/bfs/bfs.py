@@ -1,13 +1,31 @@
 from threading import Thread, active_count, Lock
 from typing import List
 
-from search.bfs.utils.node import Node
+from search.bfs.utils.node import TreeNode
 from search.bfs.utils.matrix import Matrix
 from search.bfs.utils.position import Position
 from utils.queue import Queue
 
 
 class BFSSearch(object):
+    name = "Breadth-First Search"
+
+    @classmethod
+    def demo(cls):
+        cls.run(
+            rows=20,
+            columns=20,
+            start=Position(4, 4),
+            target=Position(18, 19),
+            barriers={
+                (1, 1),
+                (2, 2),
+            },
+            strategy=False,
+            concurrent=True,
+            max_threads=20,
+        )
+
     @classmethod
     def run(
         cls,
@@ -50,7 +68,7 @@ class BFSSearch(object):
         print(
             f"Find path to target: {self.target} in a {self.matrix.rows}x{self.matrix.columns} matrix with barriers: {self.matrix.barriers}"
         )
-        self.queue.enqueue(Node(self.start))
+        self.queue.enqueue(TreeNode(self.start))
         while self.queue and not self.found:
             if not self.concurrent:
                 self.evaluate()
@@ -81,10 +99,10 @@ class BFSSearch(object):
         self.matrix.mark_position_visited(current_position)
         self.add_to_node_path_and_queue(current_node)
 
-    def add_to_node_path_and_queue(self, current_node: Node):
+    def add_to_node_path_and_queue(self, current_node: TreeNode):
         candidates = []
         for possible_position in current_node.position.surrounding_positions():
-            copied_node = Node.clone(possible_position, current_node.path)
+            copied_node = TreeNode.clone(possible_position, current_node.path)
             position = copied_node.position
             if not self.matrix.within_bounds(copied_node) or self.matrix.is_barrier(
                 position
@@ -105,8 +123,8 @@ class BFSSearch(object):
 
     @staticmethod
     def pick_best_euclidian_distance(
-        candidates: List[Node], target: Position
-    ) -> (Node, int):
+        candidates: List[TreeNode], target: Position
+    ) -> (TreeNode, int):
         scores = [
             (
                 candidate,
@@ -130,16 +148,4 @@ class Evaluator(Thread):
 
 
 if __name__ == "__main__":
-    BFSSearch.run(
-        rows=20,
-        columns=20,
-        start=Position(4, 4),
-        target=Position(18, 19),
-        barriers={
-            (1, 1),
-            (2, 2),
-        },
-        strategy=False,
-        concurrent=True,
-        max_threads=20,
-    )
+    BFSSearch.demo()

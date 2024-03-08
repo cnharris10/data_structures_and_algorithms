@@ -2,7 +2,20 @@ from typing import Any, List, Optional
 
 
 class Stack:
+    name = "Stack"
     list: List[Any] = []
+
+    @classmethod
+    def demo(cls):
+        max_size = 5
+        stack = cls(max_size)
+        for i in range(max_size + 1):
+            stack.push(i)
+            stack.print()
+        stack.print()
+        for i in range(max_size + 1):
+            print(stack.pop())
+        stack.print()
 
     def __init__(self, _max_size: int):
         if int(_max_size) <= 0:
@@ -35,12 +48,4 @@ class Stack:
 
 
 if __name__ == "__main__":
-    max_size = 5
-    stack = Stack(max_size)
-    for i in range(max_size + 1):
-        stack.push(i)
-        stack.print()
-    stack.print()
-    for i in range(max_size + 1):
-        print(stack.pop())
-    stack.print()
+    Stack.demo()

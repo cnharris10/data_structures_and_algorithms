@@ -2,7 +2,20 @@ from typing import Any, List, Optional
 
 
 class Queue:
+    name = "Queue"
     list: List[Any] = []
+
+    @classmethod
+    def demo(cls):
+        max_size = 5
+        queue = cls(max_size)
+        for i in range(max_size + 1):
+            queue.enqueue(i)
+            queue.print()
+        queue.print()
+        for i in range(max_size + 1):
+            print(queue.dequeue())
+        queue.print()
 
     def __init__(self, _max_size: int):
         if int(_max_size) <= 0:
@@ -35,12 +48,4 @@ class Queue:
 
 
 if __name__ == "__main__":
-    max_size = 5
-    queue = Queue(max_size)
-    for i in range(max_size + 1):
-        queue.enqueue(i)
-        queue.print()
-    queue.print()
-    for i in range(max_size + 1):
-        print(queue.dequeue())
-    queue.print()
+    Queue.demo()

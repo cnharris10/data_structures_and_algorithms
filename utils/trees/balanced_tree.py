@@ -1,30 +1,30 @@
-from utils.trees.node import Node
+from utils.trees.tree_node import TreeNode
 
 
 class BalancedTree(object):
     @staticmethod
     def build():
-        root_node = Node(1)
+        root_node = TreeNode(1)
 
-        level_2_nodes = [Node(2), Node(3)]
+        level_2_nodes = [TreeNode(2), TreeNode(3)]
         root_node.left = level_2_nodes[0]
         root_node.right = level_2_nodes[1]
 
-        level_3_nodes = [Node(4), Node(5), Node(6), Node(7)]
+        level_3_nodes = [TreeNode(4), TreeNode(5), TreeNode(6), TreeNode(7)]
         level_2_nodes[0].left = level_3_nodes[0]
         level_2_nodes[0].right = level_3_nodes[1]
         level_2_nodes[1].left = level_3_nodes[2]
         level_2_nodes[1].right = level_3_nodes[3]
 
         level_4_nodes = [
-            Node(8),
-            Node(9),
-            Node(10),
-            Node(11),
-            Node(12),
-            Node(13),
-            Node(14),
-            Node(15),
+            TreeNode(8),
+            TreeNode(9),
+            TreeNode(10),
+            TreeNode(11),
+            TreeNode(12),
+            TreeNode(13),
+            TreeNode(14),
+            TreeNode(15),
         ]
         level_3_nodes[0].left = level_4_nodes[0]
         level_3_nodes[0].right = level_4_nodes[1]

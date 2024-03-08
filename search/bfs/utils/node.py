@@ -4,9 +4,9 @@ from typing import List, Tuple
 from search.bfs.utils.position import Position
 
 
-class Node(object):
+class TreeNode(object):
     @classmethod
-    def clone(cls, position: Position, path: List[Tuple[int, int]]) -> "Node":
+    def clone(cls, position: Position, path: List[Tuple[int, int]]) -> "TreeNode":
         return deepcopy(cls(position, path))
 
     def __init__(self, position, path=None):
