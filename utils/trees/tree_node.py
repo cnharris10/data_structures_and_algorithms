@@ -1,7 +1,7 @@
 from typing import Optional
 
 
-class TreeNode(object):
+class TreeNode:
     left: Optional["TreeNode"] = None
     right: Optional["TreeNode"] = None
 

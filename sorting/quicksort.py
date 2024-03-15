@@ -1,4 +1,4 @@
-class QuickSort(object):
+class QuickSort:
     name = "QuickSort"
 
     @classmethod

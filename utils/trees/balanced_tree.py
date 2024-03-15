@@ -1,7 +1,7 @@
 from utils.trees.tree_node import TreeNode
 
 
-class BalancedTree(object):
+class BalancedTree:
     @staticmethod
     def build():
         root_node = TreeNode(1)

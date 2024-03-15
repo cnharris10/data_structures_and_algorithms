@@ -1,7 +1,8 @@
-from typing import Optional
+from typing import Optional, List
 
 
-class ListNode(object):
+class ListNode:
+    prev: Optional["ListNode"] = None
     next: Optional["ListNode"] = None
 
     def __init__(self, value: int):

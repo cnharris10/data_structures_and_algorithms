@@ -1,7 +1,7 @@
 from search.bfs.utils.position import Position
 
 
-class Matrix(object):
+class Matrix:
     matrix = []
     visited = []
 

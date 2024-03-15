@@ -1,6 +1,6 @@
 from typing import Optional
 
-from utils.list.list_node import ListNode
+from utils.graph.list_node import ListNode
 
 
 class LRUCache:

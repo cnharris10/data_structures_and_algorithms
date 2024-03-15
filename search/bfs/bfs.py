@@ -7,7 +7,7 @@ from search.bfs.utils.position import Position
 from utils.queue import Queue
 
 
-class BFSSearch(object):
+class BFSSearch:
     name = "Breadth-First Search"
 
     @classmethod
