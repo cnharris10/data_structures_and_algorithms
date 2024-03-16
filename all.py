@@ -32,4 +32,4 @@ classes = [
 for cls in classes:
     print(f"***** {cls.name} Demo *****")
     cls.demo()
-    print(f"**** End Demo *****\n")
+    print(f"**** End {cls.name} Demo *****\n")
