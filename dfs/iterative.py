@@ -4,7 +4,7 @@ from utils.trees.tree_node import TreeNode
 from utils.trees.unbalanced_tree import UnbalancedTree
 
 
-class DFS(object):
+class DFSIterative:
     name = "Depth-First Search - Iterative Preorder"
 
     @classmethod
@@ -31,4 +31,4 @@ class DFS(object):
 
 
 if __name__ == "__main__":
-    DFS.demo()
+    DFSIterative.demo()

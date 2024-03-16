@@ -2,7 +2,7 @@ from random import shuffle
 from typing import List
 
 
-class Position(object):
+class Position:
     def __init__(self, x, y):
         self.x = x
         self.y = y

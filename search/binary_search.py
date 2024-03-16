@@ -1,7 +1,7 @@
 from typing import Optional
 
 
-class BinarySearch(object):
+class BinarySearch:
     name = "Binary Search"
 
     @classmethod
@@ -18,13 +18,13 @@ class BinarySearch(object):
     ) -> Optional[int]:
         print(f"Searching for: {value}")
         if not l:
-            print("Result: Not in list")
+            print("Result: Not in graph")
             return
 
         pos = round((start + end) / 2)
         current = l[pos]
         if pos == last_pos:
-            print("Result: Not in list")
+            print("Result: Not in graph")
             return
 
         if value == current:

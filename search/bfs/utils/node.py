@@ -4,7 +4,7 @@ from typing import List, Tuple
 from search.bfs.utils.position import Position
 
 
-class TreeNode(object):
+class TreeNode:
     @classmethod
     def clone(cls, position: Position, path: List[Tuple[int, int]]) -> "TreeNode":
         return deepcopy(cls(position, path))

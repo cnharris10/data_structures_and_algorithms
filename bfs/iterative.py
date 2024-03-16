@@ -4,7 +4,7 @@ from utils.trees.tree_node import TreeNode
 from utils.trees.unbalanced_tree import UnbalancedTree
 
 
-class BFS(object):
+class BFS:
     name = "Iterative Breadth-First Search"
 
     @classmethod

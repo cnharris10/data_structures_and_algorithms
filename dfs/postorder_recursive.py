@@ -3,7 +3,7 @@ from utils.trees.tree_node import TreeNode
 from utils.trees.unbalanced_tree import UnbalancedTree
 
 
-class DFSPostorderRecursive(object):
+class DFSPostorderRecursive:
     name = "Depth-First Search - Recursive Postorder"
 
     @classmethod
