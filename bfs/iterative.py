@@ -4,7 +4,7 @@ from utils.trees.tree_node import TreeNode
 from utils.trees.unbalanced_tree import UnbalancedTree
 
 
-class BFS:
+class BFSIterative:
     name = "Iterative Breadth-First Search"
 
     @classmethod
@@ -30,4 +30,4 @@ class BFS:
 
 
 if __name__ == "__main__":
-    BFS().demo()
+    BFSIterative().demo()

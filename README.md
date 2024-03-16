@@ -19,3 +19,28 @@ python all.py
 ```
 python -m bfs.iterative
 ```
+
+## Current Classes
+- Breadth-First Search (BFS)
+  - `BFSIterative`
+  - `BFSSearch`
+- Cache
+  - `LRUCache`
+- Collections
+  - `Queue`
+  - `Stack`
+- Depth-First Search (DFS)
+  - `DFSInorderRecursive`
+  - `DFSIterative`
+  - `DFSPreorderRecursive`
+  - `DFSPostorderRecursive`
+- Heap
+  - `Heap`
+- Search
+  - `BinarySearch`
+  - `BFSSearch`
+- Set
+  - `HashSet`
+- Sorting
+  - `QuickSort`
+  - `TopologicalSort`
