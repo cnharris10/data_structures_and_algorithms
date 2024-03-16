@@ -94,4 +94,4 @@ class LRUCache:
 
 
 if __name__ == "__main__":
-    LRUCache.run()
+    LRUCache.demo()
