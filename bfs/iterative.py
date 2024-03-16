@@ -30,4 +30,4 @@ class BFS:
 
 
 if __name__ == "__main__":
-    BFS().run()
+    BFS().demo()
