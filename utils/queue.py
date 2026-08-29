@@ -3,7 +3,6 @@ from typing import Any, List, Optional
 
 class Queue:
     name = "Queue"
-    list: List[Any] = []
 
     @classmethod
     def demo(cls):
@@ -20,6 +19,7 @@ class Queue:
     def __init__(self, _max_size: int):
         if int(_max_size) <= 0:
             raise ValueError("Must enter a max size greater than 0.")
+        self.list: List[Any] = []
         self.max_size = _max_size
 
     def enqueue(self, element: Any) -> bool:

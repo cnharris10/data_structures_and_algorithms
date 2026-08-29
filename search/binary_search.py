@@ -17,7 +17,7 @@ class BinarySearch:
         l: list, start: int, end: int, value: int, last_pos=None
     ) -> Optional[int]:
         print(f"Searching for: {value}")
-        if not l:
+        if not l or start > end:
             print("Result: Not in graph")
             return
 

@@ -1,11 +1,10 @@
 import math
-from random import seed, randint
-from typing import List, Any
+from random import randint
+from typing import Any
 
 
 class Heap:
     name = "Heap"
-    values: List[int] = []
 
     @classmethod
     def demo(cls):
@@ -18,6 +17,7 @@ class Heap:
             heap.remove(heap.value_at(randint(0, heap.size() - 1)))
 
     def __init__(self, max_heap: bool = True, print_after_operation: bool = True):
+        self.values = []
         self.max_heap = max_heap
         self.print_after_operation = print_after_operation
         self.default_value = -math.inf if self.max_heap else math.inf
@@ -44,9 +44,12 @@ class Heap:
         # Delete last node
         del self.values[-1]
 
-        # Heapify all node elements
-        for i in range(len(self.values)):
-            self._heapify(i)
+        # Rebuild: _heapify only sifts *up*, so it cannot repair a violation
+        # at the root. Re-add each value at the bottom and sift it up. O(n log n).
+        remaining, self.values = self.values, []
+        for v in remaining:
+            self.values.append(v)
+            self._heapify(len(self.values) - 1)
 
         if self.print_after_operation:
             self._print_heap()

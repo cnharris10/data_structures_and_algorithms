@@ -1,5 +1,4 @@
 from typing import Optional
-
 from utils.graph.list_node import ListNode
 
 
@@ -28,7 +27,7 @@ class LRUCache:
         self._hash = {}
         self._head = None
 
-    def get(self, value: int, summarize: bool = False) -> None:
+    def get(self, value: int, summarize: bool = False) -> Optional[ListNode]:
         if value in self._hash:
             self._promote(value)
             return self._hash[value]
@@ -63,6 +62,8 @@ class LRUCache:
     def _remove_last_value(self) -> None:
         count = 0
         iterator = self._head
+
+        #  Remove all nodes past max_count (i.e. if 3, then remove 4th+ nodes)
         while iterator:
             next_node = iterator.next
             if count >= self._max_count - 1 and next_node:
@@ -72,24 +73,26 @@ class LRUCache:
             iterator = iterator.next
 
     def _promote(self, value: int) -> None:
+        # Already at head, do nothing
+        if self._head.value == value:
+            return
+
+        # Iterate to value
         iterator = self._head
         parent = iterator
         while iterator and iterator.value != value:
             parent = iterator
             iterator = iterator.next
 
-        parent.next = iterator.next if iterator.next else None
+        # Move value to head and set as head
+        parent.next = iterator.next
         iterator.next = self._head
         self._head = iterator
         self.summarize()
 
     @staticmethod
     def _validate_params(max_count: int):
-        try:
-            isinstance(max_count, int)
-            if int(max_count) <= 0:
-                raise
-        except ValueError:
+        if not isinstance(max_count, int) or max_count <= 0:
             raise ValueError("Must supply a positive integer 'max_count' value")
 
 
